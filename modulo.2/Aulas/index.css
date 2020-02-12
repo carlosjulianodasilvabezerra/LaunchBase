@@ -1,0 +1,79 @@
+@import 'https://fonts.googleapis.com/css?family=Lemonada:400,700&display=swap';
+:root {
+  --color-green: #50fa7b
+}
+
+*{
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #282a36;
+  font-family: 'Lemonada', cursive;
+  color: ivory;
+}
+
+header{
+  padding: 32px;
+  background-color: rgba(20, 194, 185, 0.3);
+}
+
+.menu {
+  text-align: center;
+}
+
+.menu a{
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0 16px;
+}
+
+.menu a:hover{
+  color: #1d1f1e;
+  transition: color 200ms;
+}
+
+#wrapper{
+  text-align: center;
+  padding: 32px;
+}
+
+#wrapper img{
+  border-radius: 200px 100px 100px 200px;
+  border: 5px solid var(--color-green);
+  margin-bottom: 32px;
+  height: 285px;
+}
+
+#wrapper h1{
+  font-size: 42px;
+  line-height: 52px;
+  font-weight: bold;
+}
+
+#wrapper h2{
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: normal;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+#wrapper p {
+  max-width: 600px;
+  margin: 32px auto;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+#wrapper p a{
+  color: var(--color-green);
+}
+
+#menu-footer a{
+  border-bottom: 1px solid var(--color-green);
+}
