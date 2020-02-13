@@ -1,0 +1,116 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap';
+
+*{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+header{
+  display: grid;
+  grid-template-columns: 0.30fr 1fr 1fr;
+}
+
+header a{
+  width: 95px;
+  margin-left: 80px;
+  margin-top: 32px;
+}
+
+header .menu a{
+  position: relative;
+  top: 38px;
+  margin-left: 200px;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 19px;
+  color: black;
+}
+
+header .menu a+a{
+  margin-left: 30px;
+}
+
+body .img__container{
+  width: 940px;
+  height: 366px;
+  background-color: #FBDFDB;
+  margin: 30px auto;
+  border-radius: 30px;
+}
+
+.chef-img img{
+  position: relative;
+  width: 216px;
+  height: 300px;
+  margin-left: 624px;
+  margin-top: 67px;
+}
+
+.img-title h1{
+  position: absolute;
+  margin-top: 117px;
+  margin-left: 60px;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.img-title p{
+  position: absolute;
+  margin-top: 165px;
+  margin-left: 60px;
+  width: 316px;
+  height: 84px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.most-accessed h1{
+  position: relative;
+  left: 70px;
+  margin-top: 50px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+/*==== RECIPE CARDS ====*/
+
+.cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 70px;
+  width: 300px;
+  gap: 20px;
+}
+
+.card{
+  width: 300px;
+}
+
+.card__image{
+  width: 300px;
+}
+
+.card__image img{
+  width: 300px;
+  height: 140px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.card-title h1{
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: normal;
+}
+
+.card-author p{
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #777;
+  font-weight: normal;
+}
