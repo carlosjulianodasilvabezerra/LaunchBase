@@ -14,7 +14,7 @@ header{
 
 header a{
   width: 95px;
-  margin-left: 80px;
+  margin-left: 210px;
   margin-top: 32px;
 }
 
@@ -42,8 +42,6 @@ body .img__container{
 
 .chef-img img{
   position: relative;
-  width: 216px;
-  height: 300px;
   margin-left: 624px;
   margin-top: 67px;
 }
@@ -68,19 +66,31 @@ body .img__container{
 
 .most-accessed h1{
   position: relative;
-  left: 70px;
+  left: 210px;
   margin-top: 50px;
   font-size: 24px;
   line-height: 28px;
   font-weight: bold;
 }
 
+footer {
+  height: 62px;
+  background: #eeeeee;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  color: #777;
+  display: grid;
+  align-content: center;
+}
 /*==== RECIPE CARDS ====*/
 
 .cards{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-left: 70px;
+  margin-left: 210px;
+  margin-top: 50px;
   width: 300px;
   gap: 20px;
 }
@@ -113,4 +123,102 @@ body .img__container{
   line-height: 16px;
   color: #777;
   font-weight: normal;
+}
+
+/*==== ABOUT PAGE ====*/
+
+.title-about{
+  margin-left: 210px;
+}
+
+.title-about h1{
+  margin-top: 50px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+.title-about p{
+  width: 940px;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+}
+
+.subtitle-about,
+.our-recipes{
+  margin-top: 30px;
+  margin-left: 210px;
+}
+
+.subtitle-about h1,
+.our-recipes h1{
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.subtitle-about p,
+.our-recipes p{
+  width: 940px;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+}
+
+/* ==== RECIPES PAGE ====*/
+
+.modal-overlay{
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal{
+  width: 660px;
+  height: 413px;
+  background: white;
+  margin: 40px auto;
+  border-radius: 16px;
+}
+
+.modal-content{
+  text-align: center;
+}
+.modal-content img {
+  width: 600px;
+  height: 200px;
+  border-radius: 15px;
+  margin: 30px 30px 20px 30px;
+}
+
+p.modal-title{
+  font-size: 24px;
+  line-height: 28px;
+}
+
+p.modal-author{
+  font-size: 18px;
+  line-height: 21px;
+  color: #777;
+}
+
+.close-modal{
+  display: inline-block;
+  font-size: 16px;
+  line-height: 19px;
+  color: #777;
+  margin-top: 45px;
+  cursor: pointer;
+}
+/* MODAL ACTIVE */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
