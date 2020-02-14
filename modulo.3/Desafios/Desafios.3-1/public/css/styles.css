@@ -241,3 +241,17 @@ iframe{
   font-size: 30px;
   text-align: center;
 }
+
+/* ==== CONTEUDO PAGE ==== */
+
+a.btn{
+  text-decoration: none;
+  text-align: center;
+  margin-top: 50px;
+  color: #FFF;
+}
+
+a.btn:hover{
+  color: coral;
+  transition: 200ms;
+}

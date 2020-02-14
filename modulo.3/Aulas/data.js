@@ -1,9 +1,10 @@
 module.exports = [
   {
-  id:"vqrjFnq3-uo",
-  title:"Criando Player de Audio | Mayk Brito",
-  duration:"57 min",
-  price: "Free"
+    id:"vqrjFnq3-uo",
+    title:"Criando Player de Audio | Mayk Brito",
+    duration:"57 min",
+    price: "Free",
+    featured: true
   },
   {
     id:"GSqR2i-Pq6o",
@@ -21,7 +22,8 @@ module.exports = [
     id:"HN1UjzRSdBk",
     title:"Desvendando CSS GRID na prática | Mayk Brito",
     duration:"57 min",
-    price: "Free"
+    price: "Free",
+    featured: true
   },
   {
     id:"2alg7MQ6_sI",

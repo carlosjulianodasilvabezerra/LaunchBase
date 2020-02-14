@@ -30,6 +30,19 @@ server.get('/conteudos', function(req, res){
   return res.render('conteudos', {items: data})
 })
 
+server.get('/conteudos/:id', function(req, res){
+  const id = req.params.id
+
+  const conteudo = data.find(function(conteudo){
+    return conteudo.id == id
+  })
+
+  if(!conteudo){
+    return res.send("Course not found!")
+  }
+  return res.render("conteudo", {item: conteudo})
+})
+
 server.use(function(req, res) {
   res.status(404).render("not-found")
 })
