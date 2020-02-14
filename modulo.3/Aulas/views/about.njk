@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Mayk Brito</title>
-    <link rel="stylesheet" href="/css/index.css">
-  </head>
+{% extends "layout.njk"%}
 
-  <body>
-      <header>
-        <div class="menu">
-          <a href="/">Sobre</a>
-          <a href="/portfolio">Aulas</a>
-        </div>
-      </header>
-
+{%block head%}
+<title> Sobre - Mayk Brito</title>
+{%endblock%}
+  {% block content %}
       <div id="wrapper">
         <img src="https://avatars2.githubusercontent.com/u/6643122?s=400&v=4" alt="Mayk Brito">
         <h1>Mayk Brito</h1>
@@ -25,6 +16,5 @@
         <a href="https://twitter.com/maykbrito/"target="_blank">Linkedin</a>
         <a href="https://www.linkedin.com/in/maykbrito/" target="_blank">Twitter</a>
       </div>
-  </body>
-  
-</html>
+
+  {%endblock%}

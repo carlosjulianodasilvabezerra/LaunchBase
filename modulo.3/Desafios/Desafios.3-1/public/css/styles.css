@@ -47,15 +47,14 @@ header a:hover{
   color: white;
   transition: 200ms;
 }
-
 #img img{
   width: 150px;
   height: 150px;
   border-radius: 50%;
   border: 2px solid white;
   position: absolute;
-  left: 43%;
-  top: 110px;
+  left: 44%;
+  top: 85px;
 }
 
 header img{
@@ -103,9 +102,8 @@ header img{
 }
 
 .menu-footer a{
-  color :black;
- }
-
+ color :black;
+}
 /* ==== CARDS CURSOS ====*/
 
 .cards{
@@ -135,19 +133,19 @@ header img{
 
 .card.starter img{
 position: relative;
-left: 70px;
+left: 110px;
 top: 0;
 margin-bottom: 50px;
 }
 .card.launchbase img{
 position: relative;
-left: 20px;
+left: 70px;
 top: 0;
 margin-bottom: 50px;
 }
 .card.gostack img{
 position: relative;
-left: 60px;
+left: 105px;
 top: 0;
 margin-bottom: 50px;
 }
@@ -245,4 +243,17 @@ iframe{
   height: 90%;
   position: absolute;
   bottom: 0;
+}
+
+/* ==== ERROR 404 ====*/
+
+.title .h1{
+  font-size: 45px;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.title p{
+  font-size: 30px;
+  text-align: center;
 }

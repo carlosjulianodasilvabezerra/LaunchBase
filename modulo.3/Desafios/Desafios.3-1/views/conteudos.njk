@@ -1,0 +1,57 @@
+{%extends 'layout.njk'%}
+    {%block head%}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link type="image/png" rel="shortcut icon" href="/img/favicon.png" />
+    <title>Rocketseat - Conteúdos</title>
+    {%endblock%}
+  </head>
+<body>
+  {% block header %}{%endblock%}
+  {% block cards%}
+  <section class="cards">
+    <div class="card starter" id="starter">
+      <div class="img">
+        <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="Starter">
+      </div>
+      <p><strong>Torne-se um programador desejado</strong> no mercado com esses cursos gratuitos</p>
+      <p>Módulos: 8</p>
+      <span class="card__price">Free</span>
+    </div>
+
+    <div class="card launchbase" id="launchbase">
+      <div class="img">
+        <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="Launchbase">
+      </div>
+      <p><strong>Torne-se um programador desejado</strong> no mercado com esses cursos gratuitos</p>
+      <p>Módulos: 10</p>
+      <span class="card__price">900 reais</span>
+    </div>
+
+    <div class="card gostack" id="gostack">
+      <div class="img">
+        <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="Gostack">
+      </div>
+      <p><strong>Torne-se um programador desejado</strong> no mercado com esses cursos gratuitos</p>
+      <p>Módulos: 13</p>
+      <span class="card__price">1400 reais</span>
+    </div>
+  </section>
+  
+  <div class="modal-overlay" scrolling=no>
+    <div class="modal">
+      <a class="maximize-modal">
+        <i class="material-icons">aspect_ratio</i>
+      </a>
+      <a class="close-modal">
+        <i class="material-icons">close</i>
+      </a>
+      <div class="modal-content">
+        <iframe src="" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <script src="/js/scripts.js"></script>
+</body>
+{%endblock%}
