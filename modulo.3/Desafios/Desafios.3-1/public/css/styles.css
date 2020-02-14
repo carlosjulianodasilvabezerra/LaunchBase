@@ -131,34 +131,18 @@ header img{
   align-content: center;
 }
 
-.card.starter img{
-position: relative;
-left: 110px;
-top: 0;
-margin-bottom: 50px;
-}
-.card.launchbase img{
-position: relative;
-left: 70px;
-top: 0;
-margin-bottom: 50px;
-}
-.card.gostack img{
-position: relative;
-left: 105px;
-top: 0;
-margin-bottom: 50px;
+.card img{
+  display: block;
+  margin: 0 auto;
 }
 
 .card p{
 font-size: 14px;
 line-height: 24px;
 text-align: center;
+margin-top: 20px;
 }
 
-.card p strong{
-  color: #7159c1;
-}
 
 .card p + p{
   font-weight: bold;
@@ -171,17 +155,17 @@ text-align: center;
   text-align: center;
 }
 
-.card.starter:hover{
+#starter:hover{
   border:2px solid #7159c1;
   transition: 100ms;
 }
 
-.card.launchbase:hover{
+#launchbase:hover{
   border:2px solid #fd951f;
   transition: 100ms;
 }
 
-.card.gostack:hover{
+#gostack:hover{
   border:2px solid #04d361;
   transition: 100ms;
 }

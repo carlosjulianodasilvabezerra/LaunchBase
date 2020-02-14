@@ -1,20 +1,20 @@
 {% extends "layout.njk"%}
 
 {%block head%}
-<title> Sobre - Mayk Brito</title>
+<title> Sobre - {{data.name}}</title>
 {%endblock%}
   {% block content %}
       <div id="wrapper">
-        <img src="https://avatars2.githubusercontent.com/u/6643122?s=400&v=4" alt="Mayk Brito">
-        <h1>Mayk Brito</h1>
-        <h2>Instrutor - Rocketseat</h2>
-        <p>Programador full-stack focado em trazer o melhor ensino para iniciantes em programação. Colaborador da <a href="https://rocketseat.com.br"target="_blank">Rocketseat</a>.</p>
+        <img src="{{data.avatar_url}}" alt="Imagem de {{data.name}}">
+        <h1>{{data.name}}</h1>
+        <h2>{{data.role}}</h2>
+        <p>{{data.description}}</p>
       </div>
-
+        {% for link in data.links %}
+        
       <div id="menu-footer" class="menu">
-        <a href="https://github.com/maykbrito/"target="_blank">Github</a>
-        <a href="https://twitter.com/maykbrito/"target="_blank">Linkedin</a>
-        <a href="https://www.linkedin.com/in/maykbrito/" target="_blank">Twitter</a>
+        <a href="{{link.url}}"target="_blank">{{link.name}}</a>
       </div>
+      {%endfor%}
 
   {%endblock%}

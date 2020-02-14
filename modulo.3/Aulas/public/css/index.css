@@ -75,7 +75,9 @@ header{
 }
 
 #menu-footer a{
+  display: grid;
   border-bottom: 1px solid var(--color-green);
+  align-items: center;
 }
 
 /* ===== CLASSES CARDS  =====*/
@@ -90,6 +92,7 @@ header{
 
 .card {
   background-color: #7159c1;
+  display: grid;
 }
 
 .card__image-container img{
@@ -104,6 +107,7 @@ header{
 .card__info{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 .card__price{

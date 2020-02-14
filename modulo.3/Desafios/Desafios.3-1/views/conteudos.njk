@@ -11,32 +11,18 @@
   {% block header %}{%endblock%}
   {% block cards%}
   <section class="cards">
-    <div class="card starter" id="starter">
+  {% for item in items %}
+    <div class="card" id="{{item.id}}">
       <div class="img">
-        <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="Starter">
+        <img src="{{item.image_url}}" alt="{{item.id}}">
       </div>
-      <p><strong>Torne-se um programador desejado</strong> no mercado com esses cursos gratuitos</p>
-      <p>Módulos: 8</p>
-      <span class="card__price">Free</span>
+      <p>{{item.info}}</p>
+      <p>{{item.modulos}}</p>
+      <span class="card__price">{{item.price}}</span>
     </div>
+  {% endfor %}
 
-    <div class="card launchbase" id="launchbase">
-      <div class="img">
-        <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="Launchbase">
-      </div>
-      <p><strong>Torne-se um programador desejado</strong> no mercado com esses cursos gratuitos</p>
-      <p>Módulos: 10</p>
-      <span class="card__price">900 reais</span>
-    </div>
-
-    <div class="card gostack" id="gostack">
-      <div class="img">
-        <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="Gostack">
-      </div>
-      <p><strong>Torne-se um programador desejado</strong> no mercado com esses cursos gratuitos</p>
-      <p>Módulos: 13</p>
-      <span class="card__price">1400 reais</span>
-    </div>
+    
   </section>
   
   <div class="modal-overlay" scrolling=no>

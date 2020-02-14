@@ -3,21 +3,20 @@
     {%block head%}
     <link rel="stylesheet" href="/css/styles.css">
     <link type="image/png" rel="shortcut icon" href="/img/favicon.png" />
-    <title>Rocketseat</title>
+    <title>{{data.title}}</title>
     {%endblock%}
   
     {%block content%}
   <div class="info">
-    <div id="img"><img src="https://camo.githubusercontent.com/e3a00cb35e63ebc807f3d6c3178e1f17c24a70f3/68747470733a2f2f726f636b6574736561742e636f6d2e62722f7374617469632f6f672e706e67" alt="logo"></div>
-    <h1>Rocketseat</h1>
-      <p>Mais do que uma plataforma de educação em tecnologia, somos uma comunidade incrível de programadores em busca do próximo nível. </p>
-      <p>Uma startup criada para educar, inspirar e conectar programadores e empreendedores. </p>
-    <span> <p> As principais tecnologias utilizadas são: </p>
+    <div id="img"><img src="{{data.logo_url}}" alt="logo"></div>
+    <h1>{{data.title}}</h1>
+      <p>{{data.info1}}</p>
+      <p>{{data.info2}}</p>
+    <span> <p> {{data.tectitle}} </p>
       <ol>
-        <li>* NodeJS</li>
-        <li>* React Native</li>
-        <li>* React JS</li>
-      </ol>
+      {% for tecnologia in data.tecnologias %}
+        <li>{{tecnologia.name}}</li>
+      {% endfor %}
     </span>
   </div>
   <div class="menu-footer">

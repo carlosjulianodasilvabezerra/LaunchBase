@@ -8,11 +8,23 @@ server.use(express.static('public'))
 server.set('view engine', 'njk')
 
 nunjucks.configure('views', {
-  express: server
+  express: server,
+  autoescape: false
 })
 
 server.get("/", function(req, res){
-  return res.render('about')
+  const data = {
+    avatar_url: "https://avatars2.githubusercontent.com/u/6643122?s=400&v=4",
+    name: "Mayk Brito",
+    role: "Instrutor - Rocketseat",
+    description: "Programador full-stack focado em trazer o melhor ensino para iniciantes em programação. Colaborador da <a href='https://rocketseat.com.br'target='_blank'>Rocketseat</a>.",
+    links:[
+      {name: "Github", url:"https://github.com/maykbrito/"},
+      {name: "Linkedin", url:"https://www.linkedin.com/in/maykbrito/"},
+      {name: "Twitter", url:"https://twitter.com/maykbrito/"},
+    ]
+  }
+  return res.render('about', { data })
 })
 
 server.get("/portfolio", function(req, res){
