@@ -20,7 +20,7 @@
 - [x] 1. Desafio 3.1 - Primeiro servidor
 - [x] 2. Desafio 3.2 - Nunjucks e dados dinâmicos
 - [x] 3. Desafio 3.3 - Página de descrição de cursos
-- [ ] 4. Desafio 3.4 - Refatorando Foodfy (Adicionar a conexão com o backend)
+- [x] 4. Desafio 3.4 - Refatorando Foodfy (Adicionar a conexão com o backend)
 
 ## Módulo 4 - Controle de Academia
 - [ ] 1. Desafio 4.1 - Criar um header com 2 links
