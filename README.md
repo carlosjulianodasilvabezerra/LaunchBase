@@ -23,7 +23,7 @@
 - [x] 4. Desafio 3.4 - Refatorando Foodfy (Adicionar a conexão com o backend)
 
 ## Módulo 4 - Controle de Academia
-- [ ] 1. Desafio 4.1 - Criar um header com 2 links
+- [x] 1. Desafio 4.1 - Criar um header com 2 links
 - [ ] 2. Desafio 4.2 - Card com informações do professor
 - [ ] 3. Desafio 4.3 - Formulário e rota de cadastro do professor
 - [ ] 4. Desafio 4.4 - Apresentação, edição e formatação dos dados de um professor
