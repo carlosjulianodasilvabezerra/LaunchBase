@@ -122,8 +122,38 @@ header{
 }
 
 .details .item div:nth-child(2){
-color: #555;
-  font-weight: bold;
+  color: #555;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+
+/* INPUT */
+
+input{
+  width: 100%;
+  outline: none;
   font-size: 18px;
+  font-weight: bold;
+  color: rgb(53, 51, 51);
 }
 
+input[type="radio"]{
+  width: initial;
+  margin-right: 4px;
+}
+
+input::placeholder{
+  font-size: 16px;
+  font-weight: normal;
+}
+
+button[type="submit"]{
+  padding: 8px 32px;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  margin-top: 32px;
+  width: 100%;
+  font-size: 16px;
+  cursor: auto;
+}
