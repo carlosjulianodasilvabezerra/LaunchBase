@@ -1,0 +1,153 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap';
+
+:root{
+  --primary-color: #7159c1;
+  --secondary-color: #f7df1e
+}
+
+*{
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-color);
+}
+
+header{
+  background-color: white;
+  width: 100%;
+  padding: 32px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.menu {
+  font-size: 22px;
+}
+
+.menu a{
+  text-decoration: none;
+  color: #777;
+  position: relative;
+}
+
+.menu a+a{
+  margin-left: 32px;
+}
+
+.menu a.active{
+  font-weight: bold;
+  color: var(--primary-color)
+}
+
+.menu a:hover{
+  color: var(--primary-color);
+}
+
+.menu a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+.menu a:hover::after{
+  width: 100%;
+  transition: width 200ms ease-in-out;
+}
+
+/* === CARD ===*/
+
+.card{
+  background-color: white;
+  width: 800px;
+  min-height: 400px;
+  
+  /*espaçamento alinhado centro*/
+  margin: 45px auto;
+  
+  /*grid ao meio*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /*sombra*/
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.9);
+
+  /*animation*/
+  animation-name: up;
+  animation-duration: 200ms;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes up{
+  /* 0% */
+  from{
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  /* 100% */
+  to{
+    opacity: 1;
+  }
+}
+
+/* DETAILS */
+
+.details {
+  padding: 32px;
+}
+
+.details .item{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+}
+
+/* pegar o último item da classe escolhida*/
+.details .item:last-child{
+  border-bottom: none;
+}
+
+/*pegar a primeira div apenas da classe escolhida*/
+.details .item div:nth-child(1),
+.details h3{ 
+  font-size: 14px;
+  line-height: 24px;
+  color: #777;
+  letter-spacing: 0.7px;
+  font-weight: normal;
+}
+
+.details .item div:nth-child(2){ 
+  color: #555;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.details h3{
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Acompanhamento LABELS */
+.details .item div:nth-child(2) span{
+  padding: 8px 16px;
+  background-color: var(--secondary-color);
+  border-radius: 16px;
+  color: #777;
+  margin-right: 4px;
+  /*margin top só funciona com display block/inline-block*/
+  margin-top: 8px;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}

@@ -1,5 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap';
 
+:root{
+  --primary-color: #b30059
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -47,3 +51,79 @@ header{
   width: 100%;
   transition: width 400ms cubic-bezier(0.13,-0.3, 0.9, 0.02);
 }
+
+/* CARDS */
+
+.card{
+  width: 800px;
+  min-height: 400px;
+  background-color: white;
+  
+  /*espaçamento alinhado centro*/
+  margin: 45px auto;
+  
+  /*grid ao meio*/
+  display: grid;
+  grid-template-columns: 40% 60%;
+  
+  /*sombra*/
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.9);
+
+  /*animation*/
+  animation-name: down;
+  animation-duration: 200ms;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes down{
+  /* 0% */
+  from{
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  /* 100% */
+  to{
+    opacity: 1;
+  }
+}
+
+/* DETAILS */
+
+.details{
+  padding: 32px;
+  
+}
+
+.details .item{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+}
+
+.details .item:last-child{
+  border:none;
+}
+
+.details h3{
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.7px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary-color)
+}
+.details .item div:nth-child(1){
+  font-size: 14px;
+  line-height: 24px;
+  color: #777;
+  letter-spacing: 0.7px;
+  font-weight: normal;
+}
+
+.details .item div:nth-child(2){
+color: #555;
+  font-weight: bold;
+  font-size: 18px;
+}
+
