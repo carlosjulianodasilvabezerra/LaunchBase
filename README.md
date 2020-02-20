@@ -27,7 +27,7 @@
 - [x] 2. Desafio 4.2 - Card com informações do professor
 - [x] 3. Desafio 4.3 - Formulário e rota de cadastro do professor
 - [x] 4. Desafio 4.4 - Apresentação, edição e formatação dos dados de um professor
-- [ ] 5. Desafio 4.5 - HTTP: PUT e DELETE
+- [x] 5. Desafio 4.5 - HTTP: PUT e DELETE
 - [ ] 6. Desafio 4.6 - Listagem de professores
 - [ ] 7. Desafio 4.7 - Estruturando estudantes
 - [ ] 8. Desafio 4.8 - Administração do Foodfy (Área administrativa do Foodfy)

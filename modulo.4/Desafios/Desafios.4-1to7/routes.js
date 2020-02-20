@@ -16,6 +16,10 @@ routes.get('/teachers/:id/edit', teacher.edit)
 
 routes.post('/teachers', teacher.post)
 
+routes.put('/teachers', teacher.put)
+
+routes.delete('/teachers', teacher.delete)
+
 routes.get('/teachers', function(req, res){
   return res.render('teachers/index')
 })

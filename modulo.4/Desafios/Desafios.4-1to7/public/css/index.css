@@ -160,9 +160,17 @@ a.button{
 }
 
 a.button{
-  display: block;
+  width: 15%;
+  position: absolute;
   box-sizing: border-box;
   text-align: center;
   color: white;
   text-decoration: none;
+}
+
+#form-delete button[type="submit"]{
+  width: 50%;
+  position: relative;
+  margin: 32px 0 100px 225px;
+  background-color: rgba(245, 41, 41, 0.863);
 }

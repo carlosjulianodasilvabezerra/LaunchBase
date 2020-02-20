@@ -12,11 +12,11 @@
     {
       "id": 2,
       "avatar_url": "https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
-      "name": "joão",
+      "name": "joão a.",
       "birth": 452908800000,
-      "select": "master",
-      "classType": "facetoface",
-      "subjects": "História, Sociologia"
+      "select": "doctorate",
+      "classType": "distance",
+      "subjects": "História, Geografia"
     },
     {
       "id": 3,
