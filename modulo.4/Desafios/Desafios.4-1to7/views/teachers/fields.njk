@@ -1,0 +1,81 @@
+<div class="item">
+        <div>Avatar URL</div>
+        <div>
+          <input
+            type="url"
+            name="avatar_url"
+            placeholder="http://"
+            value="{{teacher.avatar_url}}"
+          >
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Professor</div>
+        <div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Nome completo do Professor"
+            value="{{teacher.name}}"
+          >
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Data de nascimento</div>
+        <div>
+          <input
+            type="date"
+            name="birth"
+            value="{{teacher.birth}}"
+          >
+        </div>
+      </div>
+
+      <div class="item">
+      <div>Escolaridade</div>
+        <select name="select">
+            <option value="highschool">Ensino Médio</option>
+            <option value="college">Ensino Superior</option>
+            <option value="masters">Mestrado</option>
+            <option value="doctorate">Doutorado</option>
+          </select>
+      </div>
+
+      <div class="item">
+        <div>Tipos de aula</div>
+        <div>
+          <span>
+            <input
+              type="radio" 
+              name="classType" 
+              value="facetoface"
+              {% if teacher.classType == "facetoface" %}
+              checked
+              {% endif %}>Presencial
+          </span>
+          <span>
+            <input 
+              type="radio" 
+              name="classType" 
+              value="distance"
+              {% if teacher.classType == "distance" %}
+              checked
+              {% endif %}>À distância
+          </span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Área de atuação</div>
+        <div>
+          <input
+            type="text"
+            name="subjects"
+            placeholder="Separar matérias por vírgula"
+            value="{{teacher.subjects}}"
+          >
+        </div>
+      </div>
+      <button type="submit">Salvar</button>
