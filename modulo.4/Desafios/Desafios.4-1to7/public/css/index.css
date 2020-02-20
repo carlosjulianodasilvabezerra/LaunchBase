@@ -156,7 +156,7 @@ a.button{
   margin-top: 32px;
   width: 100%;
   font-size: 16px;
-  cursor: auto;
+  cursor: pointer;
 }
 
 a.button{
@@ -166,11 +166,77 @@ a.button{
   text-align: center;
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 #form-delete button[type="submit"]{
+  font-family: 'Roboto', sans-serif;
   width: 50%;
   position: relative;
-  margin: 32px 0 100px 225px;
+  left: 220px;
   background-color: rgba(245, 41, 41, 0.863);
+  color: white;
+  cursor: pointer;
+}
+
+/* TABLE INDEX */
+.table-container{
+  display: block;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.table-container table{
+  border-spacing: 0;
+}
+
+.table-container thead tr th,
+td{
+  text-align: center;
+}
+
+td, th{
+  padding: 16px;
+  border-bottom: 1px solid #969595;
+}
+
+th{
+  text-transform: uppercase;
+  color: rgb(151, 148, 148);
+  font-size: 14px;
+}
+
+tbody tr:last-child td{
+  border: none;
+}
+
+tbody tr td:first-child{
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  align-items: center;
+}
+
+tbody tr td:first-child span{
+  width: 48px;
+  height: 48px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 3px 1px 6px -4px black;
+  border: 2px solid white;
+}
+
+tbody tr td:last-child a{
+  background-color: var(--primary-color);
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.table-container thead tr th:last-child,
+td:last-child{
+  text-align: center;
 }
