@@ -1,0 +1,21 @@
+const express = require('express')
+const nunjucks = require('nunjucks')
+const routes = require('./routes')
+
+const server = express()
+
+server.use(express.urlencoded({extended:true}))
+server.use(express.static('public')) // para ver arquivos img, css, js
+server.use(routes)
+
+server.set('view engine', 'njk') // setar engine e extensão de arquivo desejado
+
+nunjucks.configure('views',{ // configura nunjucks para rodar arquivos pasta views
+  express: server,
+  autoescape: false,
+  noCache: true
+})
+
+server.listen(5000, function(){
+  console.log('Server is running')
+})
