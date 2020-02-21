@@ -1,4 +1,15 @@
 {
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "name": "joão",
+      "email": "joao@yahoo.com",
+      "birth": 737683200000,
+      "select": "2.medio",
+      "hours": "6"
+    }
+  ],
   "teachers": [
     {
       "id": 1,

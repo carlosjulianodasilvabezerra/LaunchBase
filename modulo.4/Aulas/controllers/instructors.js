@@ -1,6 +1,6 @@
 const fs = require('fs')
-const data = require('./data.json')
-const {age, date} = require('./utils')
+const data = require('../data.json')
+const {age, date} = require('../utils')
 
 
 //index
@@ -8,7 +8,6 @@ exports.index = function(req, res){
 
   return res.render('instructors/index', {instructors: data.instructors})
 }
-
 
 //show
 exports.show = function(req, res){
@@ -34,6 +33,11 @@ exports.show = function(req, res){
 }
 
 //create
+exports.create = function(req, res){
+  return res.render('instructors/create')
+}
+
+//post
 exports.post = function(req, res){
 
   // Object.keys < Object é uma função que cria um objeto para nós.
@@ -89,7 +93,7 @@ exports.edit = function(req, res){
 
 const instructor ={
   ...foundInstructor,
-  birth: date(foundInstructor.birth)
+  birth: date(foundInstructor.birth).iso
 }
 
 
