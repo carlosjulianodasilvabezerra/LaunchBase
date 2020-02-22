@@ -229,6 +229,8 @@ p.modal-author{
 #card__image img{
   margin-top: 50px;
   border-radius: 15px;
+  width: 940px;
+  height: 280px;
 }
 
 #card-title h1{
@@ -471,6 +473,8 @@ button.add-preparation{
 .card .card-image img{
   border-radius: 14px 14px;
   margin-top: 5%;
+  width: 940px;
+  height: 280px;
 }
 
 .card .card-title p{

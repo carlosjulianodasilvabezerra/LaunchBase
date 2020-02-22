@@ -16,6 +16,7 @@ function addIngredient() {
 
 document.querySelector(".add-ingredient").addEventListener("click", addIngredient);
 
+//Adicionar Novo Passo do modo de preparo
 function addStep() {
   const ingredients = document.querySelector("#preparations");
   const fieldContainer = document.querySelectorAll(".preparation");
@@ -30,3 +31,13 @@ function addStep() {
   
 document.querySelector(".add-preparation").addEventListener("click", addStep);
 
+
+//confirmar para deletar
+const formDelete = document.querySelector("#delete");
+formDelete.addEventListener("submit", function(e){
+  const confirmation = confirm("Deseja realmente deletar?");
+  
+  if (!confirmation) {
+    e.preventDefault();
+  }
+});

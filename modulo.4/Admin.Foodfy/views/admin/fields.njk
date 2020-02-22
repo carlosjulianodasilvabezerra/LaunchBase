@@ -37,10 +37,18 @@
       >
     </div>
     {% endfor %}
-  </div>
-    {%endif%}
+  
+    {% else %}
 
-  <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+    <div class="ingredient">
+      <input 
+        type="text" 
+        name="ingredients[]" 
+      >
+    </div>
+    {% endif %}
+  </div>
+    <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
     
 
   <div class="item">
@@ -59,9 +67,16 @@
           >
         </div>
         {%endfor%}
-      </div>
-      {%endif%}
+      {%else%}
 
+      <div class="preparation">
+          <input
+            type="text"
+            name="preparations[]"
+          >
+        </div>
+      {%endif%}
+    </div>
   <button type="button" class="add-preparation">Adicionar novo passo</button>
 </div>
 

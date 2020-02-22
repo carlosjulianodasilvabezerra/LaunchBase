@@ -30,7 +30,7 @@
 - [x] 5. Desafio 4.5 - HTTP: PUT e DELETE
 - [x] 6. Desafio 4.6 - Listagem de professores
 - [x] 7. Desafio 4.7 - Estruturando estudantes
-- [ ] 8. Desafio 4.8 - Administração do Foodfy (Área administrativa do Foodfy)
+- [x] 8. Desafio 4.8 - Administração do Foodfy (Área administrativa do Foodfy)
 
 ## Módulo 5 - Persistindo dados da aplicação
 - [ ] 1. Desafio 5.1 - Refatorando aplicação e configurando o BD
