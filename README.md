@@ -39,5 +39,5 @@
 - [ ] 4. Desafio 5.4 - Paginação de resultados no BD
 - [ ] 5. Desafio 5.5 - Persistindo dados no Foodfy (Criação de um banco de dados para Foodfy)
 
-## Módulo 6 - Launchstore
+## Módulo 6 e 7 - Launchstore e Upload de Imagens
 - [ ] 1. Desafio 6-1: Mini desafios (Conjunto de 4 desafios, sendo eles: DBML, Footer, Funções Assíncronas e Máscaras de Input)
