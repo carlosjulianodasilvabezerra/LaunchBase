@@ -3,12 +3,7 @@ const db = require('../../config/db')
 
 module.exports = {
   all(callback){
-    db.query(`
-      SELECT teachers.*, count(students) AS total_students
-      FROM teachers
-      LEFT JOIN students ON (students.teacher_id = teachers.id)
-      GROUP BY teachers.id
-      ORDER BY total_students DESC`, function(err, results){
+    db.query(`SELECT * FROM students`, function(err, results){
       if(err) throw `Database Error!${err}`
 
       callback(results.rows)
@@ -16,14 +11,14 @@ module.exports = {
   },
   create(data, callback){
     const query = `
-      INSERT INTO teachers (
+      INSERT INTO students (
         avatar_url,
         name,
+        email,
         birth_date,
         education_level,
-        class_type,
-        subjects_taught,
-        created_at
+        workload,
+        teacher_id
       ) VALUES ($1, $2, $3, $4, $5, $6, $7)
       RETURNING id
     `
@@ -31,11 +26,11 @@ module.exports = {
     const values = [
       data.avatar_url,
       data.name,
-      date(data.birth_date).iso,
-      data.education_level,
-      data.class_type,
-      data.subjects_taught,
-      date(Date.now()).iso
+      data.email,
+      date(data.birth).iso,
+      data.educationlevel,
+      data.workload,
+      data.teacher,
       // req.body.avatar_url,
       // req.body.name,
       // date(req.body.birth).iso,
@@ -52,46 +47,35 @@ module.exports = {
     })
   },
   find(id, callback){
-    db.query(`SELECT *
-    FROM teachers
-    WHERE id = $1`, [id], function(err, results){
+    db.query(`SELECT students.*, teachers.name AS teacher_name
+    FROM students
+    LEFT JOIN teachers ON (students.teacher_id = teachers.id)
+    WHERE students.id = $1`, [id], function(err, results){
       if(err) throw `Database Error! ${err}`
       callback(results.rows[0])
     })
   },
-  findBy(filter, callback){
-    db.query(`
-      SELECT teachers.*, count(students) AS total_students
-      FROM teachers
-      LEFT JOIN students ON (students.teacher_id = teachers.id)
-      WHERE teachers.name ILIKE '%${filter}%'
-      OR subjects_taught ILIKE '%${filter}%'
-      GROUP BY teachers.id
-      ORDER BY total_students DESC`, function(err, results){
-      if(err) throw `Database Error!${err}`
-
-      callback(results.rows)
-    })
-  },
   update(data, callback){
     const query = `
-      UPDATE teachers SET
+      UPDATE students SET
         avatar_url=($1),
         name=($2),
-        birth_date=($3),
-        education_level=($4),
-        class_type=($5),
-        subjects_taught=($6)
-      WHERE id = $7
+        email=($3),
+        birth_date=($4),
+        education_level=($5),
+        workload=($6),
+        teacher_id=($7)
+      WHERE id = $8
     `
 
     const values = [
       data.avatar_url,
       data.name,
+      data.email,
       date(data.birth).iso,
       data.educationlevel,
-      data.class_type,
-      data.subjects_taught,
+      data.workload,
+      data.teacher,
       data.id
     ]
 
@@ -102,10 +86,17 @@ module.exports = {
     })
   },
   delete(id, callback){
-    db.query(`DELETE FROM teachers WHERE id = $1`, [id], function(err, results){
+    db.query(`DELETE FROM students WHERE id = $1`, [id], function(err, results){
       if(err) throw `Database Error!${err}`
 
       return callback()
+    })
+  },
+  teachersSelectOption(callback){
+    db.query(`SELECT name, id FROM teachers`, function(err, results){
+      if(err) throw `Database Error!${err}`
+
+      callback(results.rows)
     })
   },
   paginate(params){
@@ -114,28 +105,27 @@ module.exports = {
     let query = "",
         filterQuery = "",
         totalQuery = `(
-          SELECT count(*) FROM teachers 
+          SELECT count(*) FROM students 
         ) AS total`
 
     
 
     if (filter) { 
       filterQuery = `
-      WHERE teachers.name ILIKE '%${filter}%'
-      OR teachers.subjects_taught ILIKE '%${filter}%'`
+      WHERE students.name ILIKE '%${filter}%'
+      OR students.email ILIKE '%${filter}%'`
 
       totalQuery = `(
-        SELECT count(*) FROM teachers
+        SELECT count(*) FROM students
         ${filterQuery}
       ) AS total`
     }
 
     query=`
-    SELECT teachers.*, ${totalQuery}, count(students) AS total_students
-    FROM teachers
-    LEFT JOIN students ON (teachers.id = students.teacher_id)
+    SELECT students.*, ${totalQuery}
+    FROM students
     ${filterQuery}
-    GROUP BY teachers.id LIMIT $1 OFFSET $2`
+    LIMIT $1 OFFSET $2`
 
     db.query(query, [limit, offset], function(err, results){
       if(err) throw `Database Error!${err}`

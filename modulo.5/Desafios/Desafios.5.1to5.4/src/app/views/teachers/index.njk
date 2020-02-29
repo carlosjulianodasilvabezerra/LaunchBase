@@ -2,12 +2,23 @@
 
 {% block content %}
 <div class="card table-container">
-<a href="/teachers/create">Novo</a>
+  <div class="header">
+    <a class="button" href="/teachers/create">Novo</a>
+    <form action="/teachers" method="GET">
+      <input class="filter"
+        type="text"
+        name="filter"
+        placeholder="Filtrar por Nome ou Matérias"
+      >
+      <button type="submit">Filtrar</button>
+    </form>
+  </div>
   <table width="100%">
     <thead>
       <tr>
-        <th>Teacher</th>
-        <th>Subjects</th>
+        <th>Professor</th>
+        <th>Matérias</th>
+        <th>Alunos</th>
         <th>Ação</th>
       </tr>
     </thead>
@@ -19,10 +30,17 @@
           {{teacher.name}}
         </td>
         <td>{{teacher.subjects_taught}}</td>
+        <td>{{teacher.total_students}}</td>
         <td><a href="/teachers/{{teacher.id}}">ver</a></td>
       </tr>
     {% endfor %}
     </tbody>
   </table>
+
+  <div class="pagination"
+    data-page={{pagination.page}}
+    data-total={{pagination.total}}
+    data-filter={{filter}}
+  ></div>
 </div>
 {% endblock %}

@@ -135,8 +135,14 @@ header{
 
 
 /* INPUT */
-
-input{
+select{
+  background-color: #efefef;
+  border-radius: 4px;
+  padding: 4px;
+  background:none;
+  border: 1px dashed var(--primary-color);
+}
+input, select{
   width: 100%;
   outline: none;
   font-size: 18px;
@@ -257,4 +263,73 @@ tbody tr td:last-child a{
 .table-container thead tr th:last-child,
 td:last-child{
   text-align: center;
+}
+
+/* FILTER */
+
+.table-container .header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* alinhar ao eixo y */
+  align-items: center;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+.table-container .header a{
+  margin: 0;
+  width: 120px;
+}
+
+.table-container .header form{
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+  position: absolute;
+  right: 0%;
+  gap: 20px;
+}
+
+.table-container .header form button{
+  margin: 0;
+  color: white;
+}
+
+.table-container .header form input.filter{
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  border: 1px dashed var(--primary-color);
+  padding: 6px 8px;
+}
+
+/* PAGINATION STYLES */
+
+.table-container {
+  display: grid;
+  /* grid-template: rows / columns */
+  grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header{
+  margin: 0;
+  align-self: start;
+}
+
+.table-container .pagination{
+  margin: 0;
+  align-self: end;
+  justify-self: end;
+}
+
+.pagination a,
+.pagination span{
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.pagination a:hover{
+  filter: brightness(0.3);
+  border-bottom: 1px solid var(--primary-color);
 }

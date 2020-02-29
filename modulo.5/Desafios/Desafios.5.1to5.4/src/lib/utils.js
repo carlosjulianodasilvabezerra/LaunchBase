@@ -56,29 +56,29 @@ module.exports = {
         return "Doutorado"
     }
   },
-  ano(educationlevel){
-    if(educationlevel == "5.ano"){
+  grade(education_level){
+    if(education_level == "5º"){
       return "5º Ano Ensino Fundamental";
     }else
-    if(educationlevel == "6.ano"){
+    if(education_level == "6º"){
       return "6º Ano Ensino Fundamental";
     }else
-    if(educationlevel == "7.ano"){
+    if(education_level == "7º"){
       return "7º Ano Ensino Fundamental";
     }else
-    if(educationlevel == "8.ano"){
+    if(education_level == "8º"){
       return "8º Ano Ensino Fundamental";
     }else
-    if(educationlevel == "9.ano"){
+    if(education_level == "9º"){
       return "9º Ano Ensino Fundamental";
     }else
-    if(educationlevel == "1.medio"){
+    if(education_level == "1º"){
       return "1º Ano Ensino Médio";
     }else
-    if(educationlevel == "2.medio"){
+    if(education_level == "2º"){
       return "2º Ano Ensino Médio";
     }else
-    if(educationlevel == "3.medio"){
+    if(education_level == "3º"){
       return "3º Ano Ensino Médio";
     }
     
