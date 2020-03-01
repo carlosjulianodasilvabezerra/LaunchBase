@@ -40,4 +40,14 @@
 - [ ] 5. Desafio 5.5 - Persistindo dados no Foodfy (Criação de um banco de dados para Foodfy)
 
 ## Módulo 6 e 7 - Launchstore e Upload de Imagens
-- [ ] 1. Desafio 6-1: Mini desafios (Conjunto de 4 desafios, sendo eles: DBML, Footer, Funções Assíncronas e Máscaras de Input)
+- [ ] 1. Desafio 6-1 - Mini desafios (Conjunto de 4 desafios, sendo eles: DBML, Footer, Funções Assíncronas e Máscaras de Input)
+- [ ] 2. Desafio 7 - Upload de Imagens para o Foodfy (Implementar uma funcionalidade de upload de imagens)
+
+## Módulo 8 - Listando produtos da Launchstore
+- [ ] 1. Desafio 8 - Apresentação e Organização das Receitas Foodfy(Implementar melhorias na listagem das receitas)
+
+## Módulo 9 e 10 - Cadastrando usuários e Controle de sessão dos usuários
+- [ ] 1. Desafio 9-10 - Sistema de Login para o Foodfy.  (Implementar sistema de login)
+
+## Módulo 11 - NodeJs Avançado
+- [ ] 1. Desafio 11 - Mini desafios (Conjunto de 4 desafios, sendo eles: Model Base, Seeds, Validação e Animações com Lottie)
