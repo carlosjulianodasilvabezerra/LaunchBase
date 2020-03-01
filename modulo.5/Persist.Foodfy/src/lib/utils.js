@@ -1,5 +1,5 @@
 module.exports = {
-  age:   function age(timestamp){
+  age(timestamp){
     const today = new Date()
     const birthDate = new Date(timestamp)
   
@@ -14,7 +14,8 @@ module.exports = {
   
     return age
   },
-  date: function(timestamp){
+
+  date(timestamp){
     const date = new Date(timestamp)
 
     //yyyy
@@ -32,54 +33,52 @@ module.exports = {
       month,
       year,
       iso: `${year}-${month}-${day}`,
-
-      birthDay: `${day}/${month}`
+      birthDay: `${day}/${month}`,
+      format: `${day}/${month}/${year}`
     }
-
   },
 
-  graduation: function(select){
-    if (select == "highschool"){
+
+  graduation(education_level){
+    if (education_level == "highschool"){
       return "Ensino Médio Completo";
     }else if
 
-      (select == "college"){
+      (education_level == "college"){
         return "Superior Completo"
     }else if
 
-      (select == "masters"){
+      (education_level == "master"){
         return "Mestrado"
     }else if
 
-      (select == "doctorate"){
+      (education_level == "doctorate"){
         return "Doutorado"
     }
   },
-
-
-  ano:function(select){
-    if(select == "5.ano"){
+  grade(education_level){
+    if(education_level == "5º"){
       return "5º Ano Ensino Fundamental";
     }else
-    if(select == "6.ano"){
+    if(education_level == "6º"){
       return "6º Ano Ensino Fundamental";
     }else
-    if(select == "7.ano"){
+    if(education_level == "7º"){
       return "7º Ano Ensino Fundamental";
     }else
-    if(select == "8.ano"){
+    if(education_level == "8º"){
       return "8º Ano Ensino Fundamental";
     }else
-    if(select == "9.ano"){
+    if(education_level == "9º"){
       return "9º Ano Ensino Fundamental";
     }else
-    if(select == "1.medio"){
+    if(education_level == "1º"){
       return "1º Ano Ensino Médio";
     }else
-    if(select == "2.medio"){
+    if(education_level == "2º"){
       return "2º Ano Ensino Médio";
     }else
-    if(select == "3.medio"){
+    if(education_level == "3º"){
       return "3º Ano Ensino Médio";
     }
     

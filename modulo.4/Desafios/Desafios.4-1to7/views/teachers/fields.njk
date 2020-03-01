@@ -36,10 +36,10 @@
       <div class="item">
       <div>Escolaridade</div>
         <select name="select">
-            <option value="highschool">Ensino Médio</option>
-            <option value="college">Ensino Superior</option>
-            <option value="masters">Mestrado</option>
-            <option value="doctorate">Doutorado</option>
+            <option value="highschool"{% if teacher.select == "highschool" %}selected{% endif %}>Ensino Médio</option>
+            <option value="college"{% if teacher.select == "college" %}selected{% endif %}>Ensino Superior</option>
+            <option value="masters"{% if teacher.select == "masters" %}selected{% endif %}>Mestrado</option>
+            <option value="doctorate"{% if teacher.select == "doctorate" %}selected{% endif %}>Doutorado</option>
           </select>
       </div>
 
