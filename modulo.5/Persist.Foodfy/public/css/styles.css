@@ -7,7 +7,9 @@
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
-
+.container {
+  position: relative;
+}
 header.users{
   display: grid;
   grid-template-columns: 0.30fr 1fr 1fr;
@@ -19,10 +21,10 @@ header.users .logo img{
   margin-top: 32px;
 }
 
-header .menu a{
+header div.menu a{
   position: relative;
   top: 38px;
-  margin-left: 200px;
+  margin-left: 80px;
   text-decoration: none;
   font-size: 16px;
   line-height: 19px;
@@ -31,6 +33,31 @@ header .menu a{
 
 header .menu a+a{
   margin-left: 30px;
+}
+
+form#search {
+  position: absolute;
+  right: 15.5%;
+  top: 2.5%;
+  box-sizing: border-box;
+}
+
+form input{
+  background-color: white;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px 4px;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px 16px;
+}
+
+form button{
+  background-color: #6558C3;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px 4px;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 body .img__container{
@@ -308,8 +335,11 @@ p.modal-author{
 
 
 /* ADMIN RECIPES PAGE */
-header .container{
+section .admin{
   width: 100%;
+  box-sizing: border-box
+}
+header .container{
   margin-left: 16%;
   position: relative;
   display: grid;
@@ -322,14 +352,16 @@ header.admin {
   width: 100%;
   height: 100px;
   padding: 36px;
+  
 }
 
-header div.menu{
+header div.menu-adm{
 display: grid;
 grid-template-columns: 130px 60px;
 }
-header .menu a,
-header .menu a+a{
+header .menu-adm a,
+header .menu-adm a+a{
+  text-decoration: none;
   font-size: 20px;
   line-height: 30px;
   font-weight: bold;
@@ -340,7 +372,7 @@ header .menu a+a{
   justify-self: center;
 }
 
-header .menu a:hover{
+header .menu-adm a:hover{
   color: white;
   transition: 200ms;
 }
@@ -356,20 +388,28 @@ header.admin .logo a{
 }
 .container{
   margin-left: 18%;
+
 }
-#admin .form-recipe {
+#admin .form-recipe,
+#admin-chef .form-chefs{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-#admin .form-recipe h1{
+#admin-chef .form-chefs span{
+  margin-bottom: 10px;
+}
+
+#admin .form-recipe h1,
+#admin-chef .form-chefs h1{
   margin-top: 4.5%;
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
 }
 
-#admin span a{
+#admin span a,
+#admin-chef span a{
   text-decoration: none;
   color: white;
   background-color: black;
@@ -377,7 +417,10 @@ header.admin .logo a{
   border-radius: 8px;
 }
 
-#admin span{
+
+
+#admin span,
+#admin-chef span{
   justify-self: center;
   align-self: end;
 }
@@ -443,8 +486,9 @@ header.admin .logo a{
 
 #create span{
 justify-self: center;
+margin-left: 55px;
 }
-#create span button{
+#create span button[type="submit"]{
   text-decoration: none;
   color: white;
   background-color: #6558C3;
@@ -453,6 +497,11 @@ justify-self: center;
   font-size: 16px;
   line-height: 19px;
   font-weight: bold;
+}
+
+#create span button[type="submit"]:hover{
+  filter: brightness(0.8);
+  transition: 200ms;
 }
 
 .details .item div{
@@ -555,31 +604,88 @@ button.add-preparation{
 
 /* EDITAR RECEITA */
 
-.info{
+.info-edit{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 280px 280px;
+  box-sizing: border-box;
 }
 
-.info h2{
+.info-edit h2{
   margin-top: 8%;
 }
 
-#delete button{
+form#delete button{
   background-color: #DC4747;
   padding: 8px 32px;
   border-radius: 4px 4px;
   color: white;
   position: absolute;
-  right: 24%;
   margin-top: 20px;
+  cursor: pointer; 
 }
 
-#save button{
+form#delete button:hover{
+  filter: brightness(0.8);
+  transition: 200ms;
+}
+
+form#save button{
   position: absolute;
-  right: 12.5%;
   margin-top: 20px;
   background: #6558C3;
   padding: 8px 32px;
   color: white;
   border-radius: 4px 4px;
+  right: 26%; 
+  cursor: pointer; 
 }
+
+form#save button:hover{
+  filter: brightness(0.8);
+  transition: 200ms;
+}
+
+
+/* CREATE CHEFS PAGE */
+
+.form-chef{
+  display: grid;
+  grid-template-columns: 1fr 295px;
+  margin-top: 3.7%;
+}
+
+.form-chef span{
+  justify-self: initial;
+}
+
+.cards-chef {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.cards-chef .card  {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 10px;
+  margin-top: 10%;
+}
+
+.cards-chef .card .chef-image img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.cards-chef .card .card-info .chef-title p{
+  margin-top: 1%;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 4%;
+}
+
+.cards-chef .card .card-info a{
+  color: #6558C3;
+  text-decoration: none;
+  text-align: center;
+} 

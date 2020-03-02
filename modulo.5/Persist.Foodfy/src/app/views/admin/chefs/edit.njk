@@ -1,4 +1,4 @@
-{% extends "admin/recipes/layout.njk" %}
+{% extends "admin/chefs/layout.njk" %}
 
 {% block content %}
 
@@ -20,7 +20,7 @@
     </div>
 
       <input type="hidden" name="id" value="{{ recipe.id }}">
-      {% include "admin/recipes/fields.njk" %}
+      {% include "admin/chefs/fields.njk" %}
     </form>
   </section>
 

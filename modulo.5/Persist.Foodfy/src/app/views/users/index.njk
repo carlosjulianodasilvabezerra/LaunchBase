@@ -1,7 +1,15 @@
 {% extends 'users/layout.njk' %}
 
 {% block content %}
-
+        <form id="search" action="/users" method="GET">
+            <input
+              type="text"
+              name="filter"
+              placeholder="Buscar uma receita"
+              value="{{filter}}"
+            >
+          <button type="submit">Filtrar</button>
+        </form>
   <div class="img__container">
     <div class="img-title">
       <h1>As melhores receitas</h1>
