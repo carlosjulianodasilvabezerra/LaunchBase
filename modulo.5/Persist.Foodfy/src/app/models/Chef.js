@@ -4,8 +4,10 @@ const db = require('../../config/db')
 module.exports = {
   all(callback){
     db.query(`
-      SELECT chefs.*
-      FROM chefs`, function(err, results){
+      SELECT chefs.*, count(recipes) AS total_recipes
+      FROM chefs
+      LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
+      GROUP BY chefs.id`, function(err, results){
       if(err) throw `Database Error!${err}`
 
       callback(results.rows)
@@ -33,18 +35,31 @@ module.exports = {
     })
   },
   find(id, callback){
-    db.query(`SELECT chefs.*
+    db.query(`
+    SELECT chefs.*, count(recipes) AS total_recipes
     FROM chefs
-    WHERE id = $1`, [id], function(err, results){
+    LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
+    WHERE chefs.id = $1
+    GROUP BY chefs.id`, [id], function(err, results){
       if(err) throw `Database Error! ${err}`
       callback(results.rows[0])
     })
+  },
+  findChefRecipe(id, callback){
+    db.query(`SELECT recipes.*, chefs.name AS chef_name
+    FROM recipes
+    LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+    WHERE chefs.id = $1`, [id], function(err, results){
+      if(err) throw `Database Error! ${err}`
+      callback(results.rows)
+    })
+    
   },
   update(data, callback) {
     const query = `
       UPDATE chefs SET
         name=($1),
-        avatar_url=($2),
+        avatar_url=($2)
       WHERE id = $3
     `
 
@@ -66,4 +81,11 @@ module.exports = {
       return callback()
     })
   },
+  verifyRecipe(id, callback){
+    db.query(`SELECT count(id) as total_recipes FROM recipes WHERE chef_id = $1`, [id], function(err, results){
+      if(err) throw `Database Error!${err}`
+
+      return callback(results.rows[0].total_recipes)
+    })
+  }
 }

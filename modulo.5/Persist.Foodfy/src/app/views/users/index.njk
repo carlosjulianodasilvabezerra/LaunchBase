@@ -1,7 +1,7 @@
 {% extends 'users/layout.njk' %}
 
 {% block content %}
-        <form id="search" action="/users" method="GET">
+        <form id="search" action="/users/search" method="GET">
             <input
               type="text"
               name="filter"
@@ -22,7 +22,7 @@
 
   <section class="cards">
   {% for recipe in recipes %}
-    <div class="card" id="{{loop.index -1}}">
+    <div class="card" id="{{recipe.id}}">
       <div class="card__image">
         <img src="{{recipe.image}}">
       </div>
@@ -30,7 +30,7 @@
         <h1>{{recipe.title}}</h1>
       </div>
       <div class="card-author">
-        <p>por {{recipe.author}}</p>
+        <p>por {{recipe.chef_name}}</p>
       </div>
     </div>
   {%endfor%}

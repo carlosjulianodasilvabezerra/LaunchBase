@@ -3,12 +3,12 @@
 {% block content %}
 
   <section class="edit">
-    <div class="info-edit">
+    <div class="info-edits">
       <h2>Editando receita</h2>  
       <span>
-        <form id="save" method="POST" action="/admin/recipes?_method=PUT">
-          <button type="submit">Salvar receita</button>
-        </form>
+        <div id="save">
+          <button type="submit" form="formSave">Salvar receita</button>
+        </div>
       </span>
       <span>
       <form id="delete" method="POST" action="/admin/recipes?_method=DELETE">
@@ -18,7 +18,7 @@
         
       </span>
     </div>
-
+    <form id="formSave" method="POST" action="/admin/recipes?_method=PUT" >
       <input type="hidden" name="id" value="{{ recipe.id }}">
       {% include "admin/recipes/fields.njk" %}
     </form>

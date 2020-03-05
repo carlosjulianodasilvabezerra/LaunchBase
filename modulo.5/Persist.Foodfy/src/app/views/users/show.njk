@@ -3,7 +3,7 @@
 
   {% block head %}
 
-    <title>{{recipe.title}}</title>
+    <title>{{recipes.title}}</title>
 
   {% endblock %}
 
@@ -11,25 +11,25 @@
 
     <div id="card">
       <div id="card__image">
-        <img src="{{recipe.image}}">
+        <img src="{{recipes.image}}">
       </div>
       <div id="card-title">
-        <h1>{{recipe.title}}</h1>
+        <h1>{{recipes.title}}</h1>
       </div>
       <div id="card-author">
         <p>por
-          {{recipe.author}}</p>
+          {{recipes.chef_name}}</p>
       </div>
     </div>
 
     <div id="ingredients" class="button">
       <div>
         <h2>Ingredientes</h2>
-        <span>ESCONDER</span>
+        <span>MOSTRAR</span>
       </div>
-      <div class="button-content">
+      <div class="button-content hidden">
         <ul>
-          {% for ingredient in recipe.ingredients %}
+          {% for ingredient in recipes.ingredients %}
             <li>{{ingredient}}</li>
           {% endfor %}
         </ul>
@@ -43,7 +43,7 @@
       </div>
       <div class="button-content hidden">
         <ul>
-          {% for preparation in recipe.preparations %}
+          {% for preparation in recipes.preparation %}
             <li>{{preparation}}</li>
           {% endfor %}
         </ul>
@@ -53,10 +53,10 @@
     <div id="info" class="button">
       <div>
         <h2>Informações adicionais</h2>
-        <span>ESCONDER</span>
+        <span>MOSTRAR</span>
       </div>
-      <div class="button-content">
-        <p>{{recipe.informations}}</p>
+      <div class="button-content hidden">
+        <p>{{recipes.information}}</p>
       </div>
     </div>
   </section>

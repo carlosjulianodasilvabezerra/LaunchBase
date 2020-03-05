@@ -7,6 +7,6 @@ const usuarios = [
 
 for (let i = 0; i < usuarios.length; i++){
   
-  console.log(`O usuário ${usuarios[i].nome} trabalha com ${usuarios[i].tecnologias[0]}, ${usuarios[i].tecnologias[1]}`)
+  console.log(`O usuário ${usuarios[i].nome} trabalha com ${usuarios[i].tecnologias.join(', ')}`)
 }
 
