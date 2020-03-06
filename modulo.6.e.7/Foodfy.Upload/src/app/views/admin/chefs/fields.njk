@@ -1,0 +1,24 @@
+<div class="details">
+  <div class="item">
+    <div>Nome</div>
+    <input type="text" name="name" value="{{chef.name}}" placeholder="Nome do(a) chef">
+  </div>
+</div>
+
+<div class="details">
+  <div class="item">
+    <div>Avatar</div>
+    <div id="photos-upload">
+      <input
+        id="photos-input"
+        type="file"
+        name="photos"
+        multiple
+        accept="image/*"
+        onchange="photosUpload.handleFileInput(event)"
+      >
+      <p>Enviar Avatar</p>
+    </div>
+    <div class="photos-preview"></div>
+  </div>
+</div>
